@@ -108,6 +108,33 @@ body {
   margin-right: 1.6rem !important;
 }
 
+.container {
+  /*kind of my wrapper that centers everything*/
+  /* 1140px */
+  max-width: 120rem; /*This is an genaral website width*/
+  padding: 0 3.2rem; /*So that the edges don't touch*/
+  margin: 0 auto; /*reduce the space from edge to content automatically*/
+}
+
+.grid {
+  /*reusable grid*/
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  /*set for 2 columns*/
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  /*set for 3 columns*/
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  /*set for 4 columns*/
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* ********* */
 /* HEADER */
 
@@ -219,4 +246,12 @@ body {
 .delivered-text span {
   color: #cf711f;
   font-weight: 700;
+}
+
+/* ********** */
+/* HOW IT WORKS SECTION */
+
+.section-how {
+  padding: 9.6rem 0;
+  background-color: orangered;
 }

@@ -41,6 +41,7 @@ Paragraph default: 1.6
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 * {
@@ -54,19 +55,25 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+  /* Only works if there is nothing absolutely positioned in relation to body */
+  overflow-x: hidden;
 }
 /* ********** */
 /* GENERAL REUSABLE COMPONENTS */
-
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
-  background-color: #e67e22;
+
   font-size: 2rem;
   text-decoration: none;
-  color: #fff;
+
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
   /* put transition on riginal state */
   transition: all 0.3s;
   font-weight: 600;
@@ -94,6 +101,18 @@ body {
 
   /* Trick to add border inside*/
   box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
 }
 
 .container {
@@ -132,6 +151,10 @@ body {
 .grid--4-cols {
   /*set for 4 columns*/
   grid-template-columns: repeat(4, 1fr);
+}
+.grid--5-cols {
+  /*set for 5 columns*/
+  grid-template-columns: repeat(5, 1fr);
 }
 .grid--center-v {
   align-self: center;
@@ -200,12 +223,19 @@ body {
   display: flex;
   align-items: center;
   gap: 1.6rem;
+  line-height: 1.2;
 }
 
 .list-icon {
   width: 3rem;
   height: 3rem;
   color: #e67e22;
+}
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+  outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem hsla(28, 80%, 52%, 0.5);
 }
 
 /* HELPER/SETTINGS CLASSES */

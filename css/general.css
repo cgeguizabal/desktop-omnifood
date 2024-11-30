@@ -42,6 +42,8 @@ Paragraph default: 1.6
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+  /* DOES NOT WORK ON SAFARI */
+  /* scroll-behavior: smooth; */
 }
 
 * {
